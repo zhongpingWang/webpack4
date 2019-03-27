@@ -1,0 +1,53 @@
+{
+  "name": "vueapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "vueDll": "cross-env NODE_ENV=production webpack --config webpack.dll.js",
+    "clear": "node webpack.clear.js",
+    "prodAll": "concurrently \"npm run clear && npm run vueDll && npm run prod\"  ",
+    "server":"cross-env NODE_ENV=development webpack-dev-server --profile --colors"
+  },
+  "keywords": [
+    "webpack4",
+    "vue"
+  ],
+  "author": "zpp",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@babel/runtime": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "terser-webpack-plugin": "^1.2.3",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-router": "^3.0.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "browserslist": "last 2 versions,ie 9",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
