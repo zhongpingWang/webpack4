@@ -10,7 +10,7 @@
     "vueDll": "cross-env NODE_ENV=production webpack --config webpack.dll.js",
     "clear": "node webpack.clear.js",
     "prodAll": "concurrently \"npm run clear && npm run vueDll && npm run prod\"  ",
-    "server":"cross-env NODE_ENV=development webpack-dev-server --profile --colors"
+    "server": "cross-env NODE_ENV=development webpack-dev-server --profile --colors"
   },
   "keywords": [
     "webpack4",

@@ -18,7 +18,7 @@ module.exports = {
     //production
     mode: isProd ? "production" : 'development',
 
-    entry: './src/index.js',
+    entry: './src/index2.js',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -27,10 +27,8 @@ module.exports = {
 
 
     module: {
-        rules: [ 
-         
-            // 它会应用到普通的 `.js` 文件
-            // 以及 `.vue` 文件中的 `<script>` 块
+        rules: [  
+            
             {
                 test: /\.(js|es6)$/,
                 loader: 'babel-loader?cacheDirectory',
@@ -40,9 +38,8 @@ module.exports = {
          
                     //plugins: ['@babel/transform-runtime'] 与 HtmlWebpackPlugin 不兼容
                 }
-            },
-            // 它会应用到普通的 `.css` 文件
-            // 以及 `.vue` 文件中的 `<style>` 块
+            }, 
+       
             {
                 test: /\.(less|css)$/,
                 use: [

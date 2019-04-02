@@ -1,10 +1,12 @@
 <template>
-<div class="example" @click="myzpp">{{ msg }}</div>
+<div>
+    <div class="example" @click="myzpp">{{ msg }}</div>
+    <div class="example">{{ test }}</div>
+</div>
 </template>
 
 <script>
 import "../../less/a.less"
-
 
 export default {
     data() {
@@ -13,8 +15,19 @@ export default {
         }
     },
 
+    computed: {
+        now() {
+            return +(new Date())
+        },
+        test(){
+            return this.msg + 1;
+        }
+    },
+
     methods: {
-        myzpp(){
+        myzpp() {
+
+            this.msg = +new Date();
 
             // if(process.env.NODE_ENV=="development2"){
             //     console.log(1)
