@@ -18,7 +18,7 @@ module.exports = {
     //production
     mode: isProd ? "production" : 'development',
 
-    entry: './src/index2.js',
+    entry: './src/reduxRouter/index.js',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -34,7 +34,7 @@ module.exports = {
                 loader: 'babel-loader?cacheDirectory',
                 options: {
                     "presets": ["@babel/preset-env", "@babel/preset-react"],
-                     plugins: ['@babel/plugin-proposal-class-properties']
+                     plugins: [["@babel/plugin-proposal-decorators", { "legacy": true }],'@babel/plugin-proposal-class-properties']
          
                     //plugins: ['@babel/transform-runtime'] 与 HtmlWebpackPlugin 不兼容
                 }
@@ -85,7 +85,7 @@ module.exports = {
         new webpack.optimize.ModuleConcatenationPlugin(), 
         
         new MiniCssExtractPlugin({
-            filename: '/css/style.css'
+            filename: '/css/[name].css'
         }),
 
         new HtmlWebpackPlugin({
